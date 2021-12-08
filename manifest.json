@@ -1,0 +1,27 @@
+{
+    "name": "Poly+",
+    "description": "By DevPixels",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://*.polytoria.com/*"],
+            "js": ["webscript.js"]
+        },
+
+        {
+            "matches": ["https://*.polytoria.com/games/*"],
+            "js": ["game_page.js"]
+        },
+
+        {
+            "matches": ["https://*.polytoria.com/shop/*"],
+            "js": ["catalog_inspector.js"]
+        }
+    ],
+    "manifest_version": 3
+}
