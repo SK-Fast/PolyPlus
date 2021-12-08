@@ -21,7 +21,19 @@
         {
             "matches": ["https://*.polytoria.com/shop/*"],
             "js": ["catalog_inspector.js"]
+        },
+
+        {
+            "matches": ["https://*.polytoria.com/shop/"],
+            "js": ["catalog_page.js"]
+        },
+
+        {
+            "matches": ["https://*.polytoria.com/user/"],
+            "js": ["profile.js"]
         }
     ],
-    "manifest_version": 3
+    "manifest_version": 3,
+    "icons": {
+       "128": "PolyPlus.png" }
 }
