@@ -4,11 +4,15 @@
     "version": "1.0",
     "permissions": [],
     "content_scripts": [
-    
 
         {
             "matches": ["https://*.polytoria.com/games/*"],
             "js": ["game_page.js"]
+        },
+
+        {
+            "matches": ["https://*.polytoria.com/games/"],
+            "js": ["main_game_page.js"]
         },
 
         {
