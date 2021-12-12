@@ -2,16 +2,9 @@
     "name": "Poly+",
     "description": "By DevPixels",
     "version": "1.0",
-    "permissions": [
-        "activeTab",
-        "tabs",
-        "storage"
-    ],
+    "permissions": [],
     "content_scripts": [
-        {
-            "matches": ["https://*.polytoria.com/*"],
-            "js": ["webscript.js"]
-        },
+    
 
         {
             "matches": ["https://*.polytoria.com/games/*"],
