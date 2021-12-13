@@ -1,5 +1,7 @@
 let url = window.location.pathname.split( '/' );
 
+if (url[2]) {
+
 let LikeCount = 0
 let DisLikeCount = 0
 let GameID = 0
@@ -44,3 +46,5 @@ fetch("https://api.polytoria.com/v1/games/info?id=" + GameID).then(datanonjson =
         
     })
 })
+
+}

@@ -64,10 +64,7 @@ function Ran() {
     function DidAlittlerandomgame() {
     TriedToget = TriedToget + 1
     let RandomizedGameId = getRandomInt(1500) + 1
-    polyplus_randomgame.innerHTML = '<i class="fe fe-loader"></i> Randomizing..'   
     polyplus_randomgame.setAttribute("disabled","disabled") 
-
-    
 
     fetch('https://polytoria.com/assets/thumbnails/games/' + RandomizedGameId.toString() + '.png').then(data2 => {
                 if (data2.status == 404) {
@@ -76,6 +73,9 @@ function Ran() {
                 }
 
         fetch('https://api.polytoria.com/v1/games/info?id=' + RandomizedGameId.toString()).then(datanonjson => {datanonjson.json().then(data => {
+        
+            polyplus_randomgame.innerHTML = '<i class="fe fe-loader"></i> Randomizing..(' + TriedToget.toString() + ")"   
+
         
         if (TriedToget >= 30) {
 
