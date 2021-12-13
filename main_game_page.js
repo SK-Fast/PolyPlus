@@ -67,34 +67,44 @@ function Ran() {
     polyplus_randomgame.innerHTML = '<i class="fe fe-loader"></i> Randomizing..'   
     polyplus_randomgame.setAttribute("disabled","disabled") 
 
-    fetch('https://api.polytoria.com/v1/games/info?id=' + RandomizedGameId.toString()).then(datanonjson => {datanonjson.json().then(data => {
     
-    if (TriedToget >= 30) {
 
-        polyplus_randomgame.innerHTML = '<i class="fe fe-x"></i> Failed.'    
-        polyplus_randomgame.removeAttribute("disabled")
+    fetch('https://polytoria.com/assets/thumbnails/games/' + RandomizedGameId.toString() + '.png').then(data2 => {
+                if (data2.status == 404) {
+                    DidAlittlerandomgame()
+                    return
+                }
 
-        alert("Failed, Please try again.")
-
-            return
-          }   
-    
-    
-        if (data.status == 404 || typeof(data) == "undefined") {
-              DidAlittlerandomgame()
-              return
-            }
-            
-            
-            if (data["Active"] == false) {
-              DidAlittlerandomgame()
-              return
-            }
-                
-            window.location.href = "https://polytoria.com/games/" + data["ID"].toString()
+        fetch('https://api.polytoria.com/v1/games/info?id=' + RandomizedGameId.toString()).then(datanonjson => {datanonjson.json().then(data => {
         
+        if (TriedToget >= 30) {
+
+            polyplus_randomgame.innerHTML = '<i class="fe fe-x"></i> Failed.'    
+            polyplus_randomgame.removeAttribute("disabled")
+
+            alert("Failed, Please try again.")
+
+                return
+            }   
+        
+        
+            if (data.status == 404 || typeof(data) == "undefined") {
+                DidAlittlerandomgame()
+                return
+                }
+                
+                
+                if (data["Active"] == false) {
+                DidAlittlerandomgame()
+                return
+                }
+
+                    window.location.href = "https://polytoria.com/games/" + data["ID"].toString()
+                })})   
+    })
+                        
     
-    })})   
+    
 }
 
 DidAlittlerandomgame()

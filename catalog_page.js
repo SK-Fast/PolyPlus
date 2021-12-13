@@ -53,16 +53,24 @@ width: 264px;
 </div>
 </div>`
 
-//HeaderCatalog.innerHTML += FilterMenu
+/*
+HeaderCatalog.innerHTML += FilterMenu
 
+let PriceFilterFree = document.getElementById("POLYPLUS_PRICEFILTER_FREE")
+let PriceFilterCustom = document.getElementById("POLYPLUS_PRICEFILTER_CUSTOM")
+let PriceFilterAny = document.getElementById("POLYPLUS_PRICEFILTER_ANYPRICE")
+let SearchByCreator = document.getElementById("POLYPLUS_PRICEFILTER_SEARCHBYCREATOR")
+
+SearchByCreator.style.display = "none"
+
+PriceFilterAny.click()
+*/
 
 function Update() {
     let strType = SortSelection.options[SortSelection.selectedIndex].text;
-    //let SearchByCreator = document.getElementById("POLYPLUS_PRICEFILTER_SEARCHBYCREATOR")
-    let PriceFilterFree = document.getElementById("POLYPLUS_PRICEFILTER_FREE")
-    let PriceFilterCustom = document.getElementById("POLYPLUS_PRICEFILTER_CUSTOM")
-    let PriceFilterAny = document.getElementById("POLYPLUS_PRICEFILTER_ANYPRICE")
+
     /*
+
     let TargettedCreator = SearchByCreator.value
 
     if (TargettedCreator !== "") {
@@ -79,10 +87,7 @@ function Update() {
                 if (creatoratag[1]) {
                     creatoratag = thecard.getElementsByTagName("a")[1]
                     let CreatorNameInCard = creatoratag.textContent
-                    console.log(CreatorNameInCard)
-                    console.log(TargettedCreator)
-                    if (CreatorNameInCard !== TargettedCreator) {
-                        console.log("Hidden")
+                    if (CreatorNameInCard !== " " + TargettedCreator) {
                         item.style.display = "none"
                     } else {
                         item.style.display = ""
@@ -93,7 +98,9 @@ function Update() {
             }
         })
     }
+
     */
+    
 
     if (strType == "Limited Item") {
         let all = CatalogContainer.querySelectorAll("div")

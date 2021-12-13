@@ -16,14 +16,15 @@ function GetLoggedInUser() {
 let theinter;
 let triedfor = 0
 
+let AddFriendBtn = document.getElementById("btn-addfriend")
+
 theinter = setInterval(() => {
 
     let MainContent = document.getElementsByClassName("col-sm-4")[0]
     let BtnGroup = MainContent.getElementsByClassName("btn-group")[0]
     let AboutUser = MainContent.getElementsByTagName("h3")[0]
 
-    let AddFriendBtn = document.getElementById("btn-addfriend")
-    if (AddFriendBtn.getAttribute("disabled") == "disabled") {
+    if (AddFriendBtn.getAttribute("disabled") == "disabled" && AddFriendBtn.textContent !== "Pending") {
         AboutUser.innerHTML += ' <a target="_none" href="https://polytoria.com/my/settings?polyplus_type=description" class="fe fe-edit"></a>'
         clearInterval(theinter)
     }
@@ -32,5 +33,6 @@ theinter = setInterval(() => {
         clearInterval(theinter)
 
     }
+    
     
 }, 200);
