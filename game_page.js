@@ -8,7 +8,8 @@ let GameID = 0
 
 let playbtn = document.getElementById("playButton")
 let LaunchFunction = playbtn.getAttribute('onclick')
-GameID = LaunchFunction.replace("launchClient","").replace("(","").replace(")","")
+GameID = LaunchFunction.replace(" ","").replace("launchClient","").replace("(","").replace(",false)","").replace(",true)","")
+console.log("PolyPlus Debugger: " + GameID)
 
 fetch("https://api.polytoria.com/v1/games/info?id=" + GameID).then(datanonjson => {
     datanonjson.json().then(data => {
