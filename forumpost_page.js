@@ -15,7 +15,6 @@ function urlify(text) {
 }
 
 
-
 function imageify(text) {
     var urlRegex = /(https?:\/\/[^\s]+).(jpeg|jpg|gif|png)$/;
     return text.replace(urlRegex, function(url) {
