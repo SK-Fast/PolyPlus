@@ -6,9 +6,7 @@ let LikeCount = 0
 let DisLikeCount = 0
 let GameID = 0
 
-let playbtn = document.getElementById("playButton")
-let LaunchFunction = playbtn.getAttribute('onclick')
-GameID = LaunchFunction.replace(" ","").replace("launchClient","").replace("(","").replace(",false)","").replace(",true)","")
+GameID = url[2]
 console.log("PolyPlus Debugger: " + GameID)
 
 fetch("https://api.polytoria.com/v1/games/info?id=" + GameID).then(datanonjson => {
