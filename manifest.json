@@ -21,6 +21,11 @@
         },
 
         {
+            "matches": ["https://*.polytoria.com/home"],
+            "js": ["home_page.js"]
+        },
+
+        {
             "matches": ["https://*.polytoria.com/shop/"],
             "js": ["catalog_page.js"]
         },
