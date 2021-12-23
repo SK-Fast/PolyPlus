@@ -3,6 +3,12 @@ let url = window.location.pathname.split( '/' );
 
 if (url[2]) {
 
+    chrome.storage.sync.get([ 'downloadasset' ], function(result) {
+
+        if (result['downloadasset'] == false) {
+            return
+        }
+
 let bodycontainer = document.querySelectorAll('.main-content')[1].querySelectorAll('.row')[0]
 let ImgPreview = bodycontainer.querySelectorAll('.col-sm-5')[0]
 let AssetInfo = bodycontainer.querySelectorAll('.col-sm')[0]
@@ -71,4 +77,5 @@ fetch("https://api.polytoria.com/v1/asset/info?id=" + ItemID).then(datanonjson =
 }))
 
 console.log(bodycontainer)
+    })
 }

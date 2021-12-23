@@ -1,3 +1,9 @@
+chrome.storage.sync.get([ 'shoplimiteditemfilter' ], function(result) {
+
+    if (result['shoplimiteditemfilter'] == false) {
+        return
+    }
+
 let SortSelection = document.getElementById("sortType")
 let CatalogContainer = document.getElementById("catalog_container")
 let HeaderCatalog = document.getElementsByClassName("header-body")[0]
@@ -136,3 +142,4 @@ function Update() {
 }
 
 setInterval(Update,100);
+})

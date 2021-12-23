@@ -1,4 +1,8 @@
+chrome.storage.sync.get([ 'creationlinkembedding' ], function(result) {
 
+    if (result['creationlinkembedding'] == false) {
+        return
+    }
     let Table = document.getElementsByClassName("table")[0]
     let TableBody = Table.getElementsByTagName("tbody")[0]
     let AllStuff = TableBody.querySelectorAll("tr")
@@ -31,3 +35,5 @@
     
         //item.innerHTML = "Test"
     })
+
+})

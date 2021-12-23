@@ -1,3 +1,9 @@
+chrome.storage.sync.get([ 'likecount' ], function(result) {
+
+    if (result['likecount'] == false) {
+        return
+    }
+
 let url = window.location.pathname.split( '/' );
 
 if (url[2]) {
@@ -47,3 +53,4 @@ fetch("https://api.polytoria.com/v1/games/info?id=" + GameID).then(datanonjson =
 })
 
 }
+})

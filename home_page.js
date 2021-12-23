@@ -1,3 +1,9 @@
+chrome.storage.sync.get([ 'newsfetching' ], function(result) {
+
+    if (result['newsfetching'] == false) {
+        return
+    }
+
 let colsm8 = document.getElementsByClassName("col-sm-8")[0]
 
 colsm8.innerHTML = "<h3>Feed</h3>" + colsm8.innerHTML
@@ -46,3 +52,4 @@ fetch("https://raw.githubusercontent.com/SK-Fast/polyplus-other-stuff/main/annou
         })
     }
 })})
+})

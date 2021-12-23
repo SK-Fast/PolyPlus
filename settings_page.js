@@ -14,3 +14,8 @@ if (polyplus_type) {
 
     }
 }
+
+let headertabs = document.getElementsByClassName("header-tabs")[0]
+
+let PolyPlusBtnTemplate = `<a class="nav-link" target="_none" href="https://polytoria.com/polyplus/settings/">&nbsp;&nbsp;PolyPlus</a>`
+headertabs.innerHTML += PolyPlusBtnTemplate

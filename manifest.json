@@ -1,8 +1,10 @@
 {
     "name": "Poly+",
     "description": "By DevPixels",
-    "version": "1.4.2",
-    "permissions": [],
+    "version": "1.5",
+    "permissions": [
+        "storage"
+    ],
     "content_scripts": [
 
         {
@@ -48,6 +50,16 @@
         {
             "matches": ["https://*.polytoria.com/forum/post/*"],
             "js": ["forumpost_page.js"]
+        },
+
+        {
+            "matches": ["https://*.polytoria.com/polyplus/settings/"],
+            "js": ["polyplus_settings.js"]
+        },
+
+        {
+            "matches": ["https://polytoria.com/*"],
+            "js": ["themeapplier.js"]
         }
     ],
     "manifest_version": 3,

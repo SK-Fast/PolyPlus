@@ -1,3 +1,6 @@
+chrome.storage.sync.get([ 'directdescriptionedit', 'avatarinspect' ], function(result) {
+
+
 let url = window.location.pathname.split( '/' );
 let UserId = url[2]
 
@@ -21,6 +24,8 @@ let UserTabBtn = document.getElementById("tab_user_btn")
 let TabUserContent = document.getElementById("tab_user")
 let TopBtnGroupUL = UserTabBtn.parentElement.parentElement
 let Toppest = TopBtnGroupUL.parentElement
+
+if (result['avatarinspect'] !== false) {
 
 let AvatarProcess = `<h3>Avatar</h3><div class="card" id="polyplus_avatar_inspect" style="padding: 15px;display: flex;flex-wrap: wrap;flex-direction: row;
 ">
@@ -79,14 +84,23 @@ async function FetchDatas(data) {
     justify-content: center;
     
     ">
+    <img src="https://polytoria.com/assets/img/avatarloader.gif" id="polyplus_loading" width="200" height="200">
+    </div><div class="card" id="polyplus_total_balance" style="
+    padding: 15px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    
+    ">
     </div>`
 
     polyplus_avatar_inspect.innerHTML += bodycolordata
 
     polyplus_avatar_inspect.innerHTML += HatUsing
+            
     
-
     let polyplus_avatar_inspect_hats = document.getElementById("polyplus_avatar_inspect_hats")
+    let polyplus_total_balance = document.getElementById("polyplus_total_balance")
 
     DataTypes.forEach(async function(item) {
 
@@ -106,6 +120,9 @@ async function FetchDatas(data) {
         }))
     }
 
+    let TotalBricks = 0
+    let TotalStuds = 0
+
     CatalogItems.forEach(function(item) {
         let Template = `
         <div class="col-4 col-sm-2"><a target="_none" href="https://polytoria.com/shop/${item["ID"]}"><div class="card" style="padding: 5px;">
@@ -113,14 +130,32 @@ async function FetchDatas(data) {
                 <center><span style="font-size: 12px;">${item["Name"]}</span><button class="btn btn-primary btn-sm btn-block">View</button></center>
                 </div></a></div>`
 
+                if (item["Price"] !== -1) {
+                    if (item["Currency"] == "Studs") {
+                        TotalStuds += item["Price"]
+                    } else {
+                        TotalBricks += item["Price"]
+
+                    }
+
+                }
+            
                 polyplus_avatar_inspect_hats.innerHTML += Template
     })
 
+    let Template = `<h4>Total balance: <img width="22" height="22" src="/assets/img/icons/stud.png"> ${TotalStuds} , <img width="22" height="22" src="/assets/img/icons/brick.png">  ${TotalBricks} .</h4>`
+
+    polyplus_total_balance.innerHTML += Template
+
+    
+    document.getElementById("polyplus_loading").parentElement.removeChild(document.getElementById("polyplus_loading"))
 
 }
 
 fetch("https://api.polytoria.com/v1/users/getappearance?id=" + UserId).then(datanonjson => datanonjson.json().then(data => FetchDatas(data)))
+}
 
+if (result['directdescriptionedit'] !== false) {
 
 theinter = setInterval(() => {
 
@@ -140,3 +175,5 @@ theinter = setInterval(() => {
     
     
 }, 200);
+}
+})

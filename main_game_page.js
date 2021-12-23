@@ -1,8 +1,24 @@
 let ButtonGroup = document.getElementsByClassName("mb-0")[0]
 
 ButtonGroup.innerHTML += `<div class="col-auto">
-<button class="btn btn-secondary" id="polyplus_randomgame">Random game</button>
+<button class="btn btn-secondary" id="polyplus_randomgame" style="display:none">Random game</button>
 </div>`
+
+//randomgamebtn
+
+let LikeDislikeEnabled = false
+let polyplus_randomgame = document.getElementById("polyplus_randomgame")
+
+chrome.storage.sync.get([ 'randomgamebtn', 'mainpage_likedislike' ], function(result) {
+
+    if (result['mainpage_likedislike'] == true) {
+        LikeDislikeEnabled = true
+    }
+
+    if (result['randomgamebtn'] == true) {
+        polyplus_randomgame.style.display = "block"
+    }
+})
 
 if (!String.prototype.includes) {
     String.prototype.includes = function() {
@@ -11,7 +27,13 @@ if (!String.prototype.includes) {
     };
 }
 
-let polyplus_randomgame = document.getElementById("polyplus_randomgame")
+chrome.storage.sync.get([ 'newsfetching' ], function(result) {
+
+    if (result['newsfetching'] == false) {
+        return
+    }
+})
+
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -111,4 +133,4 @@ function Ran() {
 DidAlittlerandomgame()
 }
 
-polyplus_randomgame.onclick = Ran
+polyplus_randomgame.addEventListener('click',Ran)

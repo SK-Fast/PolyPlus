@@ -32,6 +32,12 @@ function checkURLIsIMG(url) {
   
 //ForumContent.innerHTML = urlify(ForumContent.innerHTML)
 
+chrome.storage.sync.get([ 'formlinkembedding' ], function(result) {
+
+    if (result['formlinkembedding'] == false) {
+        return
+    }
+
 let AllTexts = document.querySelectorAll("p")
 
 
@@ -61,3 +67,5 @@ Array.from(AllTexts2).forEach(function (item) {
     }
 
 });
+
+})
