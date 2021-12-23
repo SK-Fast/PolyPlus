@@ -20,3 +20,6 @@ You can simply download the original asset by just *click* the download buttons!
 Know how many people like/dislike the game!
 
 More coming soon..
+
+
+Support Server: https://discord.gg/Xc7kfpy66j
