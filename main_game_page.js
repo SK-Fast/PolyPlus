@@ -4,7 +4,7 @@ ButtonGroup.innerHTML += `<div class="col-auto">
 <button class="btn btn-secondary" id="polyplus_randomgame" style="display:none">Random game</button>
 </div>`
 
-//randomgamebtn
+//randomgamebtn 
 
 let LikeDislikeEnabled = false
 let polyplus_randomgame = document.getElementById("polyplus_randomgame")
