@@ -181,6 +181,11 @@ let OriginHTML = `
                     <input id="randomgamebtn" type="checkbox">
                 </div>
 
+                <div>
+                    <label>Guild Preview </label>
+                    <input id="guildpreview" type="checkbox">
+                </div>
+
                     <h4>Theme</h4>
                     <label>Use theme? </label>
 
@@ -365,7 +370,8 @@ let allsettings = [
     "bgattachtype",
     "primarybgcolor",
     "downloadasset",
-    "randomgamebtn"
+    "randomgamebtn",
+    "guildpreview"
 ]
 
 allsettings.forEach(function(item) {

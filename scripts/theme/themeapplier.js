@@ -34,10 +34,11 @@ if (window.location.href == "https://polytoria.com/polyplus/settings/") {
             background-attachment: ${result["bgattachtype"]} !important;
         }
 
-        .btn-primary {
+        .btn-primary, .alert-primary {
             background-color: ${result["primarybgcolor"]} !important;
             border-width: 0px !important;
         }
+
         `
 
         var type = 'text/css';
@@ -47,8 +48,6 @@ if (window.location.href == "https://polytoria.com/polyplus/settings/") {
 
         
     const objectURL = window.URL.createObjectURL(file)
-
-    console.log(objectURL)
 
         document.head.innerHTML += `<link id="polyplus_css_link" href="${objectURL}" rel="stylesheet" type="text/css">`
     })

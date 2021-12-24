@@ -9,57 +9,62 @@
 
         {
             "matches": ["https://*.polytoria.com/games/*"],
-            "js": ["game_page.js"]
+            "js": ["./scripts/game/game_page.js"]
         },
 
         {
             "matches": ["https://*.polytoria.com/games/"],
-            "js": ["main_game_page.js"]
+            "js": ["./scripts/game/main_game_page.js"]
         },
 
         {
             "matches": ["https://*.polytoria.com/shop/*"],
-            "js": ["catalog_inspector.js"]
+            "js": ["./scripts/catalog/catalog_inspector.js"]
         },
 
         {
             "matches": ["https://*.polytoria.com/home"],
-            "js": ["home_page.js"]
+            "js": ["./scripts/home/home_page.js"]
         },
 
         {
             "matches": ["https://*.polytoria.com/shop/"],
-            "js": ["catalog_page.js"]
+            "js": ["./scripts/catalog/catalog_page.js"]
         },
 
         {
             "matches": ["https://*.polytoria.com/create/*"],
-            "js": ["create_page.js"]
+            "js": ["./scripts/create/create_page.js"]
         },
 
         {
             "matches": ["https://*.polytoria.com/user/*"],
-            "js": ["profile_page.js"]
+            "js": ["./scripts/profile/profile_page.js"]
         },
 
         {
             "matches": ["https://*.polytoria.com/my/settings*"],
-            "js": ["settings_page.js"]
+            "js": ["./scripts/settings/settings_page.js"]
         },
 
         {
             "matches": ["https://*.polytoria.com/forum/post/*"],
-            "js": ["forumpost_page.js"]
+            "js": ["./scripts/forum/forumpost_page.js"]
         },
 
         {
             "matches": ["https://*.polytoria.com/polyplus/settings/"],
-            "js": ["polyplus_settings.js"]
+            "js": ["./scripts/settings/polyplus_settings.js"]
         },
 
         {
             "matches": ["https://polytoria.com/*"],
-            "js": ["themeapplier.js"]
+            "js": ["./scripts/theme/themeapplier.js"]
+        },
+
+        {
+            "matches": ["https://*.polytoria.com/guilds/create"],
+            "js": ["./scripts/guild/guildpreview.js"]
         }
     ],
     "manifest_version": 3,
