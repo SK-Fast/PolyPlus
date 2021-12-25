@@ -130,6 +130,17 @@ let OriginHTML = `
 
             <h1 class="text-center">Poly+ Settings</h1>
 
+            <h4>Site feature settings</h4>
+
+            <div class="container">
+                <div>
+                    <label>Show Chat </label>
+                    <input id="showchat" type="checkbox">
+                </div>
+            </div>
+
+            <h4>Poly+ feature settings</h4>
+
             <div class="container">
                 <div>
                     <label>News fetching enabled </label>
@@ -371,7 +382,8 @@ let allsettings = [
     "primarybgcolor",
     "downloadasset",
     "randomgamebtn",
-    "guildpreview"
+    "guildpreview",
+    "showchat"
 ]
 
 allsettings.forEach(function(item) {
