@@ -104,6 +104,10 @@ async function FetchDatas(data) {
 
     DataTypes.forEach(async function(item) {
 
+        if (Wearables[item] == null) {
+            return
+        }
+
         await fetch("https://api.polytoria.com/v1/asset/info?id=" + Wearables[item]).then(datanonjson2 => datanonjson2.json().then(data2 => {
             if (datanonjson2.status == 200) {
                 CatalogItems.push(data2)
@@ -113,6 +117,9 @@ async function FetchDatas(data) {
     })
 
     for (let i2 = 0; i2 < Hats.length; i2++) {
+        if (Hats[i2] == null) {
+            return
+        }
         await fetch("https://api.polytoria.com/v1/asset/info?id=" + Hats[i2]).then(datanonjson2 => datanonjson2.json().then(data2 => {
             if (datanonjson2.status == 200) {
                 CatalogItems.push(data2)
