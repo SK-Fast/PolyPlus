@@ -332,7 +332,6 @@ let OriginHTML = `
                     </div>
 
 
-
                 <br>
 
                 <button id="update_settings">Update Settings</button>
