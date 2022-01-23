@@ -8,7 +8,9 @@ if (window.location.href == "https://polytoria.com/polyplus/settings/") {
         "usetheme",
         "navbarcolor",
         "primarybgcolor",
-        "showchat"
+        "showchat",
+        "textmutedcolor",
+        "navbarTextColor"
     ]
             
     chrome.storage.sync.get(themedata, function(result) {
@@ -21,6 +23,7 @@ if (window.location.href == "https://polytoria.com/polyplus/settings/") {
             processcss = `
             .navbar {
                 background-color: ${result["topbarcolor"]} !important;
+                border: none;
             }
     
             .navbar-vertical {
@@ -35,9 +38,17 @@ if (window.location.href == "https://polytoria.com/polyplus/settings/") {
                 background-attachment: ${result["bgattachtype"]} !important;
             }
     
-            .btn-primary, .alert-primary {
+            .btn-primary, .alert-primary, .card, .form-control {
                 background-color: ${result["primarybgcolor"]} !important;
                 border-width: 0px !important;
+            }
+
+            .text-muted, .text-secondary,.form-control::placeholder,.header-pretitle,.icon {
+                color: ${result["textmutedcolor"]} !important;
+            }
+
+            .nav-item a {
+                color: ${result["navbarTextColor"]} !important;
             }
     
             `

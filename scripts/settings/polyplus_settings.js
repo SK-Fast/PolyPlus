@@ -94,6 +94,7 @@ let OriginHTML = `
             #update_settings {
                 padding: 10px 10px;
                 border-radius: 10px;
+                width:100%;
                 border-width: 0px;
                 background-color: rgb(0, 140, 255);
                 font-family: 'Comfortaa', cursive;
@@ -155,11 +156,6 @@ let OriginHTML = `
                 <div>
                     <label>Main page like dislike ratio </label>
                     <input id="mainpage_likedislike" type="checkbox">
-                </div>
-
-                <div>
-                    <label>Like dislike count </label>
-                    <input id="likecount" type="checkbox">
                 </div>
 
                 <div>
@@ -298,6 +294,23 @@ let OriginHTML = `
                         <input id="primarybgcolor" type="color">
                     </div>
 
+                </div>
+
+                <div>
+                <label>Secondary Text Color </label>
+                
+                <input id="textmutedcolor" type="color">
+                <br>
+
+            </div>
+
+            <div>
+                            <label>NavBar Text Color </label>
+                            
+                            <input id="navbarTextColor" type="color">
+                            <br>
+
+                        </div>
 
                     <div>
                         <label>Background Image </label>
@@ -366,7 +379,6 @@ let allsettings = [
     "newsfetching",
     "avatarinspect",
     "mainpage_likedislike",
-    "likecount",
     "formlinkembedding",
     "creationlinkembedding",
     "shoplimiteditemfilter",
@@ -382,7 +394,9 @@ let allsettings = [
     "downloadasset",
     "randomgamebtn",
     "guildpreview",
-    "showchat"
+    "showchat",
+    "textmutedcolor",
+    "navbarTextColor"
 ]
 
 allsettings.forEach(function(item) {

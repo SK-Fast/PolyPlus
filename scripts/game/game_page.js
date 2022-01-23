@@ -14,7 +14,7 @@ let GameID = 0
 
 GameID = url[2]
 console.log("PolyPlus Debugger: " + GameID)
-
+/*
 fetch("https://api.polytoria.com/v1/games/info?id=" + GameID).then(datanonjson => {
     datanonjson.json().then(data => {
 
@@ -51,6 +51,7 @@ fetch("https://api.polytoria.com/v1/games/info?id=" + GameID).then(datanonjson =
         
     })
 })
-
+*/
 }
+
 })
